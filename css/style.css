@@ -1,0 +1,68 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+.cards{
+  display: grid;
+  width: 80%;
+  margin: auto;
+  grid-template-columns: repeat(3,1fr);
+  font-size: 2rem;  
+}
+
+.card{
+  /* width: 200px;  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px solid gray;
+  text-align: center;
+  padding: 5px;
+}
+
+.image{
+  width: 80%;
+
+}
+
+

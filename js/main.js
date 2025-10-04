@@ -19,7 +19,7 @@ function getAmiibos() {
     clearCards();
     const date = document.querySelector('#date').value;
 
-    const url = `https://www.amiiboapi.com/api/amiibo?type=figure&release.na=${date} `;
+    const url = `https://corsproxy.io/?url=https://www.amiiboapi.com/api/amiibo?type=figure&release.na=${date} `;
 
     fetch(url)
         .then(res => res.json())

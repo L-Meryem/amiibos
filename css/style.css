@@ -25,44 +25,114 @@ body {
   font-family: "Trebuchet MS", sans-serif;
 }
 
+header{
+  background-color: black;
+  padding: 2rem;
+}
+
+main{
+  margin-top: 50px;
+  width: 80%;
+  margin: auto;
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-
-}
-
-footer {
-
-}
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+h1{
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.search{
+  /* width:  */
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+}
 
 .cards{
   display: grid;
-  width: 80%;
   margin: auto;
   grid-template-columns: repeat(3,1fr);
+  
   font-size: 2rem;  
+  gap: 20px;
 }
 
 .card{
-  /* width: 200px;  */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  border: 1px solid gray;
-  text-align: center;
-  padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    box-shadow: 10px 5px  gray;
+    text-align: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
 }
 
 .image{
-  width: 80%;
+  width: 98%;
+  height: auto;
+}
+
+.description{
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.description .name{
+  font-size: 1.5rem;
+}
+
+.description small{
+  font-size: 0.8rem;
+  color: gray;
+  display: block;
+  margin-top: 5px;
+}
+
+button {
+  border: 2px solid black;
+  box-shadow: 10px 5px  gray;
+  font-size: 1.5rem;
+  padding: 2px;
+  width: 40%;
+}
+
+input{
+  width: 40%;
+  font-size: 1.5rem;
+  padding: 2px;
+  box-shadow: 10px 5px  gray;
+  margin-right: 20px;
 
 }
 
+@media screen and (max-width: 790px){
+  .cards{
+     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 610px){
+  .cards{
+     grid-template-columns: 1fr;
+  }
+
+  .search{
+    flex-direction: column;
+    gap: 10px;
+  }
+  button, input, .card{
+    width: 100%;
+    min-width: 200px;
+  }
+}
 

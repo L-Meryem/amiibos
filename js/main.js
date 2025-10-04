@@ -8,7 +8,10 @@ show
     release date
 */
 
-const button = document.querySelector('button');
+document.querySelector('#date').valueAsDate = new Date();
+getAmiibos();
+
+const button = document.querySelector('#search');
 button.addEventListener('click', getAmiibos);
 
 
@@ -35,9 +38,7 @@ function getAmiibos() {
                     return year === releaseYear;
                 });
             }
-            // console.log(filteredAmiibos);
-            filteredAmiibos.forEach(fig => {
-                console.log(fig);
+            filteredAmiibos.sort((a, b) => new Date(b.release.na) - new Date(a.release.na)).forEach(fig => {
                 // Create a card inside section cards
                 const { h2, series, releaseDate, img } = createCard();
                 // Fill in the card
@@ -52,17 +53,19 @@ function getAmiibos() {
 
 }
 
-function clearCards(){
+function clearCards() {
     const cards = document.querySelector('.cards')
     cards.replaceChildren();
 }
 
-function createCard() {
+function createCard(char) {
     //Create a card
     const cards = document.querySelector('.cards');
     const div = document.createElement('div');
     div.className = 'card';
     //Create card's content
+    const description = document.createElement('div');
+    description.className = 'description';
     const h2 = document.createElement('h2');
     h2.className = 'name';
     const series = document.createElement('small');
@@ -76,7 +79,8 @@ function createCard() {
     div.classList.add('card');
     img.classList.add('image');
     //Connect tags
-    div.append(h2, series, releaseDate, img);
+    description.append(h2, series, releaseDate)
+    div.append(description, img);
     cards.append(div);
     //return tags as an {} to diconstruct
     return { h2, series, releaseDate, img };
